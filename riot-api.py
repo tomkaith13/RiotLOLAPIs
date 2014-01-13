@@ -48,7 +48,7 @@ class C_Riot_retrieval:
         print 'recent games url=',url        
         self._recentGameObj = self.getRestResp(url)
         
-
+""" How to use the class """
 lycon_ro = C_Riot_retrieval('xxxx ur- API-key xxxx ','lycon13')
 if lycon_ro is None:
     print 'Unable to retrieve info from RIOT on user'
