@@ -51,15 +51,11 @@ class C_Riot_retrieval:
     
     def get_RecentGame(self):
         """ Retrieve the recent games object """
-        _baseNameUrl = 'https://prod.api.pvp.net/api/lol/na/v1.3/game/by-summoner/'
+        _baseNameUrl = 'https://prod.api.pvp.net/api/lol/na/v1.3/game/by-summoner/'       
         
-        print self._summonerObj
-        print self._sName.lower()
-        print self._summonerObj[self._sName.lower()]
-        print (self._summonerObj[self._sName.lower()])['id']
         _sumID = str((self._summonerObj[self._sName.lower()])['id'])
         url = _baseNameUrl + _sumID +'/recent?api_key=' + self._api_key
-        print 'recent games url=',url        
+                
         self._recentGameObj = self.getRestResp(url)
         
         
@@ -78,15 +74,16 @@ def main():
     rg_obj = lycon_ro._recentGameObj
     
     """getting games """
+    print '\n\nUsing the recent game statistics:\n'
     w_count = 0
     l_count = 0
-    print rg_obj
+    
     recentGames = rg_obj['games']
     game_len = len(rg_obj['games'])
     print 'num of games:',game_len
     for i in range(game_len):
         player_stats = dict(recentGames[i]['stats'])
-        print player_stats['win']
+        
         if player_stats['win']:
             w_count+=1
         else:
