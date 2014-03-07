@@ -1,5 +1,7 @@
 README
 
+Version: 1.1
+
 How to use me:
 1) Call the class initializer using your riot API key.
 Riot Games inc ties each API-key to a specific account to track the usage of its
@@ -11,7 +13,11 @@ http://developer.riotgames.com/docs/getting-started
 
 
 Limitations:
-Right now the API work on 1.1.
 The region defaults to 'North America'
 
-These limitations will be addressed in the next 
+
+Next Version:
+Adding region support as a part of the class constructor
+Adding function to extract players total win/loss and calculate KDA ratio.
+
+These limitations will be addressed in the next version 
